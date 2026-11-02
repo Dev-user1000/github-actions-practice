@@ -8,5 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Hello
-        run: echo "Hello GitHub Actions!"
+      - name: Show Date
+        run: date
+
+      - name: Show Java Version
+        run: java -version
