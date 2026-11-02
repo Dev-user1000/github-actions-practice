@@ -20,3 +20,6 @@ jobs:
 
       - name: Run Maven Test
         run: mvn test
+
+      - name: Build Jar
+        run: mvn package
