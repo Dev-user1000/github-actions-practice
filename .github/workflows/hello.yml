@@ -52,3 +52,12 @@ jobs:
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Push image to ECR
+        env:
+          ECR_REGISTRY: 933643055423.dkr.ecr.ap-northeast-1.amazonaws.com
+          ECR_REPOSITORY: calculator-app
+        run: |
+          docker tag calculator-app:latest $ECR_REGISTRY/$ECR_REPOSITORY:latest
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
+
